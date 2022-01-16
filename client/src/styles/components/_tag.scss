@@ -1,0 +1,14 @@
+.tag-wrapper {// ul 
+        margin: 1.5% auto;
+        li {
+                min-width: 100px;
+                height: 20px;
+                margin: 0 1% 1% 0;
+                padding: 0.1em 0.5em;
+                @include flexCenterAll;
+                @include border-radius(5px);
+                @include main-btn;
+                p { @include min-600px {font-size: 14px; }}
+        }
+}
+        

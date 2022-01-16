@@ -1,0 +1,16 @@
+.banner-pic {
+
+    &__home {
+        @include max-600px {
+            @include bannerImg(110px,linear-gradient(rgba(229, 218, 151, 0.5), rgba(0, 0, 0, 0.5)),url('../../assets/imgs/heroImg.png'), 20px);
+            h1 { width: 80%;}
+        }
+        @include min-600px{
+            @include bannerImg(225px,linear-gradient(rgba(229, 218, 151, 0.5), rgba(0, 0, 0, 0.5)),url('../../assets/imgs/heroImg.png'), 40px);  
+        }
+        h1 {color: $white;}
+    }
+    &__about {
+        @include bannerImg(220px,linear-gradient(rgba(229, 218, 151, 0.5), rgba(0, 0, 0, 0.5)),url('../../assets/imgs/gustavo-alves-YOXSC4zRcxw-unsplash\ 1.png'), 30px);  
+    }
+}

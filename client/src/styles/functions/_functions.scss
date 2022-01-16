@@ -1,0 +1,9 @@
+/* ================================== */
+/* Functions */
+/* ================================== */
+
+// set up a margin-top for each page content
+// base min = header's height => mobile:70px / desktop:110px
+@function contentTopMargin($current, $base: 110px) {
+    @return $base + $current;
+}

@@ -1,0 +1,85 @@
+/* ======================================== */
+/* COLOURS */
+/* ======================================== */
+
+/* base */
+$white: #ffff;
+$dark: #0000;
+
+$orange-main: #FF6060; /* txt */
+$red-main:#901C1C;/* orange active */
+
+$grey: #F6F6F6; /* bg */
+$greySpecial: #C4C4C4; /* + */
+
+
+// buttons (= anything clickable with orange bg + white color)
+// ============================================================
+@mixin main-btn{ background-color:$orange-main;color:$white;}
+
+$btn-palette:(
+    static: (bg: $orange-main, txt: $white ),
+    hover: ( bg: $orange-main, txt: $dark ),
+    focus: ( bg: $orange-main, txt: $dark )
+);
+
+
+@mixin btn-palette($palettes) {
+    @each $state, $palette in $palettes{
+        @debug "palettes=" #{$palettes};  /* --------- ?  */
+        &:#{$state}{
+            background-color: map-get($palette, bg);
+            color: map-get($palette, txt);
+        }
+    }
+}
+
+// tag links 
+// ======================
+$tag-palette:(
+    static : (bg: $white, txt: $orange-main, border: 0.5px solid $grey ),
+    hover: ( bg: $orange-main, txt: $white, border: none ),
+    focus: ( bg: $orange-main, txt: $white, border: none )
+);
+
+@mixin tag-palette($palettes) {
+    @each $state, $palette in $palettes{
+        &:#{$state}{
+            background-color: map-get($palette, bg);
+            color: map-get($palette, txt);
+            border: map-get($palette, border )
+        }
+    }
+}
+
+/* ======================================== */
+/* FONT-SIZES */
+/* ======================================== */
+
+$font-size: (xs: 12px, s: 14px, m: 18px, l: 24px, xl: 36px, xxl:48px );
+$font-size-em: (xs: 0.75em, s: 0.875em, m: 1.125em, l: 1.5em, xl: 2.25em, xxl: 3em );
+
+
+@mixin font-size($font-size, $weight:500) {
+    font-size: $font-size;
+    font-weight:$weight;
+}
+
+// Fluid typography (adapts to viewport's size)
+// for each font-size :  range =  min size to max size
+// -------------------------------------------------------
+/* @mixin calcResponsiveFsize($min-viewport, $min-fs, $max-viewport, $max-fs){
+    font-size:calc($min-fs + ($max-fs - $min-fs)) * ((100vw - $min-viewport) / ($max-viewport - $min-viewport));
+}  ====> replaced by following syntax (sass err mix vw+px - conflict using 'calc()') */
+// clamp() = clamps a value between an upper and lower bound
+@mixin calcResponsiveFsize($min-viewport, $min-fs, $max-viewport, $max-fs){
+    $clamp-size: #{'min(max(#{$max-fs}, #{$min-fs}), #{$max-viewport})'};
+    font-size: $clamp-size;
+}
+
+// fluid size => any wrapper
+@mixin calcResponsiveSize($min-viewport, $min-s, $max-viewport, $max-s){
+    $clamp-size: #{'min(max(#{$max-s}, #{$min-s}), #{$max-viewport})'};
+    width: $clamp-size;
+}
+

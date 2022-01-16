@@ -1,0 +1,19 @@
+/* ================================== */
+/* 404 component */
+/* ================================== */
+
+.notFoundPage-wrapper {
+
+    .notFound-pic-wrapper {
+        // @include calcResponsiveSize(320px, 195px, 50vw, 580px);
+        @include max-992px { height: 70px;}
+        @include min-992px { height: 200px;}
+        img { 
+            min-width: auto;
+            max-height: 100%;
+            margin: auto;
+            display: block;
+        }
+    }
+    h1, h2 {text-align: center;}
+}

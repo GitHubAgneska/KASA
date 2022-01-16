@@ -1,0 +1,188 @@
+@use "sass:map";
+
+/* ======================================== */
+/* ======================================== */
+/* MIXINS */
+/* ======================================== */
+/* ======================================== */
+
+/* ======================================== */
+/* TRANSITIONS */
+/* ======================================== */
+
+@mixin transition($elements, $duration, $type) {
+    transition: $elements $duration $type;
+    -webkit-transition: $elements $duration $type;
+    -ms-transition: $elements $duration $type;
+    -moz-transition: $elements $duration $type;
+    -o-transition: $elements $duration $type;
+}
+
+/* ======================================== */
+/* BREAKPOINTS*/
+/* ======================================== */
+$breakpoints: (xs-mobile: 375px, mobile: 600px, tablet: 768px, laptop: 992px, desktop: 1200px );
+
+/* == up to 375  */
+@mixin max-375px {
+    @media screen and (max-width: map-get($breakpoints, xs-mobile )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);  // --------- TO REVIEW : replace 'all' with specific elements
+    }
+}
+/* == from 375  */
+@mixin min-375px {
+    @media screen and (min-width: map-get($breakpoints, xs-mobile )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+/* == up to 600  */
+@mixin max-600px {
+    @media screen and (max-width: map-get($breakpoints, mobile )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+/* == from 600  */
+@mixin min-600px {
+    @media screen and (min-width: map-get($breakpoints, mobile )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+/* == up to 768  */
+@mixin max-768px {
+    @media screen and (max-width: map-get($breakpoints, tablet )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+/* == from 768  */
+@mixin min-768px {
+    @media screen and (min-width: map-get($breakpoints, tablet )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+/* == up to 992  */
+@mixin max-992px {
+    @media screen and (max-width: map-get($breakpoints, laptop )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+/* == from 992  */
+@mixin min-992px {
+    @media screen and (min-width: map-get($breakpoints, laptop )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+
+/* == up to 1200  */
+@mixin max-1200px {
+    @media screen and (max-width: map-get($breakpoints, desktop )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+
+/* == from 1200  */
+@mixin min-1200px {
+    @media screen and (min-width: map-get($breakpoints, desktop )) {
+        @content;
+        @include transition(all, 1s, ease-in-out);
+    }
+}
+
+
+/* ======================================== */
+/* COMMON ELEMENTS */
+/* ======================================== */
+@mixin icon-base {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin icon-size( $size: 1.3em ) { 
+    font-size: $size;
+}
+
+/* ======================================== */
+/* MARGINS  */
+/* ======================================== */
+@mixin mlmr-auto { margin-left: auto; margin-right: auto; }
+@mixin m-auto { margin: auto; }
+
+
+/* ======================================== */
+/* PADDINGS  */
+/* ======================================== */
+@mixin p-top-base {
+    padding-top: 25px;
+}
+
+
+/* ======================================== */
+/* SIZE */
+/* ======================================== */
+@mixin h100w100 {
+    height:100%; width:100%;
+}
+
+
+/* ======================================== */
+/* POSITION */
+/* ======================================== */
+@mixin centered {
+    display: flex;       
+    justify-content: center;
+    align-items: center;
+}
+
+/* ======================================== */
+/* FLEXBOX */
+/* ======================================== */
+@mixin flex($dir, $wraptype) {
+    display: flex;
+    flex-flow: $dir $wraptype;
+}
+
+@mixin flexCenterAll{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ======================================== */
+/* BORDER-RADIUS */
+/* ======================================== */
+@mixin border-radius($pixel...) {
+    border-radius: $pixel;
+}
+@mixin border-radius-sides($pixel, $u-l) { // ----- TO REVIEW
+    border-top-right-radius: $pixel;
+    border-top-left-radius: $pixel;
+    border-bottom-right-radius: $pixel;
+    border-bottom-left-radius: $pixel;
+}
+
+
+/* ======================================== */
+/* BANNER IMAGE */
+/* ======================================== */
+@mixin bannerImg($height, $gradient, $url, $mb ) {
+    height: $height;
+    background-image: $gradient, $url;
+    @include centered;
+    @include border-radius(10px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: $mb;
+}
+
+

@@ -1,0 +1,21 @@
+/* ================================== */
+/* Top Nav */
+/* ================================== */
+
+.topnav-wrapper {
+    // border: 2px solid grey;
+    @include max-600px {width: 135px;}
+    @include min-992px {width: 265px;}
+    nav {
+        display: flex;
+        justify-content: space-between;
+        li {
+            display: inline;
+            a {
+                color: $orange-main;
+                @include max-600px {text-transform: uppercase;}
+                &:active, &:hover {text-decoration: underline;}
+            }
+        }
+    }
+}

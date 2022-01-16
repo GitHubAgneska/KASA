@@ -1,0 +1,54 @@
+
+/* ================================== */
+/* Collapsing block */
+/* ================================== */
+
+.collapsBlock {
+    width:100%;
+    // height:165px;
+    position: relative;
+    margin-bottom: 30px;
+    h4 { margin: 0 5%;}
+    p { margin: 0; padding: 5%;}
+
+    &__header{
+        @include max-600px {height: 30px;}
+        @include min-600px {height: 45px; }
+        
+        position: relative; // for caret abs positioning
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $orange-main;
+        color:$white;
+        @include border-radius(5px);
+
+        &__caret-wrapper {
+            position: absolute;
+            right:5%;
+            img { // caret
+                @include icon-base;
+                height:1em;
+                transition: transform 0.2s;
+                &.up { transform: rotate(180deg);} // caret points upwards when dropdown is open
+            }
+        }
+    }
+    &__body{
+        height:0;
+        transition: height 0.8s;
+        transition: opacity 0.5s;
+        opacity: 0;
+        &--active { // block is open
+            min-height:135px; transition: all 0.5s;
+            width: 100%;
+            background-color: $grey;
+            color:$orange-main;
+            @include border-radius(5px);
+            p {  opacity: 1; transition: opacity 1.5s;}
+            ul { padding: 1%;
+                li { p { padding: 1%; }}
+            }
+        }
+    }
+}   

@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "a platform for freelance photographers with accessibility support",
   "main": "server.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "client": "cd client && npm start"
+    "client": "cd client && npm start",
+    "build": "cd client && nom run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "author": "HAG",
   "license": "MIT",

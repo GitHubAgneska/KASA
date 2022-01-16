@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom'
 import NotFoundPage from './404'
 
 
-const apiUrl = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
+/* const apiUrl = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
 const myHeaders = new Headers();
 const myRequest = new Request( apiUrl, {
     method: 'GET',
@@ -15,7 +15,7 @@ const myRequest = new Request( apiUrl, {
     cache: 'default',
     credentials: 'include',
     
-});
+}); */
 
 const Rental =  ({match: {params : {id}}}) => {
 
@@ -36,7 +36,7 @@ const Rental =  ({match: {params : {id}}}) => {
 
     useEffect(()=> {
         // fetch(myRequest)
-        fetch(myRequest, {id})
+        fetch('/api', {id})
             .then(response => {
                 if (response.ok) { return response.json() } throw response })
             .then(data => {

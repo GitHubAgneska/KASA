@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "./static/css/main.2d7fd1a9.css",
+    "main.js": "./static/js/main.cb84ad60.js",
+    "static/js/787.d0509df8.chunk.js": "./static/js/787.d0509df8.chunk.js",
+    "static/media/gustavo-alves-YOXSC4zRcxw-unsplash 1.png": "./static/media/gustavo-alves-YOXSC4zRcxw-unsplash 1.6a25797b7244c1ebab31.png",
+    "static/media/heroImg.png": "./static/media/heroImg.5a4a9413e75e16758ec9.png",
+    "static/media/montserrat-regular.ttf": "./static/media/montserrat-regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/montserrat-medium.ttf": "./static/media/montserrat-medium.e2d60bc49517598c0ce8.ttf",
+    "static/media/montserrat-regular.eot": "./static/media/montserrat-regular.5dbc621a36f22fdfb06b.eot",
+    "static/media/montserrat-medium.eot": "./static/media/montserrat-medium.d5ff2451806e78fb885e.eot",
+    "static/media/montserrat-medium.woff": "./static/media/montserrat-medium.f9a6049bd46b95707073.woff",
+    "static/media/montserrat-regular.woff": "./static/media/montserrat-regular.841bbddee94930acac33.woff",
+    "static/media/notFound.png": "./static/media/notFound.9fa66fd86351b6aa1f78.png",
+    "index.html": "./index.html",
+    "main.2d7fd1a9.css.map": "./static/css/main.2d7fd1a9.css.map",
+    "main.cb84ad60.js.map": "./static/js/main.cb84ad60.js.map",
+    "787.d0509df8.chunk.js.map": "./static/js/787.d0509df8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d7fd1a9.css",
+    "static/js/main.cb84ad60.js"
+  ]
+}

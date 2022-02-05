@@ -2,7 +2,7 @@
 ### B&B application
 ---
 
-https://mysterious-mesa-34251.herokuapp.com/#/home
+https://kasa-myhomeanywhere.herokuapp.com/#/home
 
 ---
 <p align="center">

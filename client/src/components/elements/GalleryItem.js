@@ -15,8 +15,12 @@ export const GalleryItem =({rental}) =>  {
         return  (
             <li onClick={() => handleClick(rental.id)}>
                 <figure className="galleryItem">
-                    <img src={rental.cover} alt="" />
-                    {/* <img src={rental.cover} alt="" className={imgLoaded? 'loading': null} onLoad={() =>setImgLoaded(true)}/> */}
+                    <img
+                        loading='lazy'
+                        src={rental.cover}
+                        alt='alt img'
+                    />
+
                     <figcaption>{rental.title}</figcaption>
                 </figure>
             </li>

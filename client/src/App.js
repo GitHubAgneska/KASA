@@ -1,17 +1,18 @@
-import React, {Fragment } from 'react';
+import React, {Fragment, Suspense, lazy } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
-/* import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
- */import Header  from './components/layout/Header'
-import Footer from './components/layout/Footer'
-import Home from './components/containers/Home'
-import NotFoundPage from './components/containers/404'
-import About from './components/containers/About'
-import Rental from './components/containers/Rental'
+/* import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'*/
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import ScrollToTop from './components/elements/ScrollToTop';
 
-// each top-level feature declares its own route
-// Fragment used here because Router can't have multiple children
+import Header  from './components/layout/Header'
+import Footer from './components/layout/Footer'
+
+import NotFoundPage from './components/containers/404'
+import About from './components/containers/About'
+
+const Rental = lazy(()=> import('./components/containers/Rental'))
+const Home = lazy(() => import('./components/containers/Home') )
+
 const App = () =>  {
 
     return (
@@ -21,14 +22,16 @@ const App = () =>  {
               <Router>
               <Header/>
                 <Fragment>
-                  <ScrollToTop />
-                  <Switch>
-                    <Route exact path="/" render={() => <Redirect to="/home" />} />
-                    <Route exact path="/home" component={Home} />
-                    <Route exact path="/rental/:id" component={Rental} />
-                    <Route exact path="/about" component={About} />
-                    <Route component={NotFoundPage} />
-                  </Switch>
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <ScrollToTop />
+                    <Switch>
+                      <Route exact path="/" render={() => <Redirect to="/home" />} />
+                      <Route exact path="/home" component={Home} />
+                      <Route exact path="/rental/:id" component={Rental} />
+                      <Route exact path="/about" component={About} />
+                      <Route component={NotFoundPage} />
+                    </Switch>
+                  </Suspense>
                 </Fragment>
               <Footer />
               </Router>

@@ -31,7 +31,7 @@ const RentalInfos =  ({cover, title,location, pictures, description, hostName, h
 
                 <div className="rental-presentation__owner">
                     <h3>{hostName}</h3>
-                    <img src={hostPicture} alt={hostName} />
+                    <img src={hostPicture} alt={hostName} loading='lazy'/>
                 </div>
                 
                 <div className="rental-presentation__rating">

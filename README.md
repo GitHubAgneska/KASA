@@ -1,9 +1,9 @@
-# KASA, Home anywhere
-# https://kasa-myhomeanywhere.herokuapp.com/
+## KASA, Home anywhere
+### https://kasa-myhomeanywhere.herokuapp.com/
 
 ---
 <p align="center">
-    <img width="300px" src="./client/src/assets/screens/kasa_screen.png">
+    <img width="300px" src="./client/src/assets/imgs/kasa_screen.png">
 </p>
 
 ---
